@@ -40,15 +40,13 @@ public final class Main {
             return;
         }
 
-        String[] message = {"></>help", "dank memes", "beta is in still"};
+        String[] message = {"></>help", "r!help", "@Relash help"};
         new Timer().scheduleAtFixedRate(new TimerTask() {
 
-            int i = 0;
             @Override
             public void run() {
 
-                if(i > message.length + 1) i = 0;
-                jda.getPresence().setGame(Game.of(message[i]));
+                jda.getPresence().setGame(Game.of(message[new Random().nextInt(message.length)]));
             }
 
         }, TimeUnit.MINUTES.toMillis(2), TimeUnit.MINUTES.toMillis(2));
