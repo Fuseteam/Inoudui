@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * Created by Ryan's PC on 05/03/2017.
  */
-public class Utils {
+public abstract class Utils {
 
     protected EmbedBuilder makeEmbed(String title, String description, String... fields){
 
