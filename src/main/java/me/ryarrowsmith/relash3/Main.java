@@ -30,7 +30,6 @@ public final class Main {
                     .setToken("Mjg3NTY2MTkwNDIxODY4NTQ0.C52LgQ.IURbXYYKZQb9uGBy0tiaX5N2pbQ")
                     .setAudioEnabled(false)
                     .addListener(new CommandHandler())
-                    .setGame(Game.of("memes"))
                     .setStatus(OnlineStatus.ONLINE)
                     .buildBlocking();
 
