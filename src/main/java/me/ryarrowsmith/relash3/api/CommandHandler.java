@@ -5,6 +5,7 @@ import me.ryarrowsmith.relash3.api.commands.random.animal.Cat;
 import me.ryarrowsmith.relash3.api.commands.random.animal.Dog;
 import me.ryarrowsmith.relash3.api.commands.random.Flip;
 import me.ryarrowsmith.relash3.api.commands.stats.Ginfo;
+import me.ryarrowsmith.relash3.api.commands.stats.Help;
 import me.ryarrowsmith.relash3.api.commands.stats.Info;
 import me.ryarrowsmith.relash3.api.commands.stats.Ping;
 import net.dv8tion.jda.core.entities.Message;
@@ -89,6 +90,11 @@ public final class CommandHandler extends ListenerAdapter {
             case "ping":
 
                 new Ping().ping(message);
+                break;
+
+            default:
+
+                new Help().help(message);
                 break;
         }
     }

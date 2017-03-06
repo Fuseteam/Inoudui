@@ -20,11 +20,11 @@ public final class Flip extends Utils {
 
         try {
 
-            trigger.getChannel().sendMessage(makeEmbed("Flipping a coin...", null).build()).queue((flip) -> flip.editMessage(makeEmbed( result, null).build()).queue());
+            trigger.getChannel().sendMessage(makeEmbed(result, null).build()).queue();
 
         } catch (PermissionException e){
 
-            trigger.getChannel().sendMessage("Flipping a coin...").queue((flip) -> flip.editMessage(result));
+            trigger.getChannel().sendMessage(result).queue();
         }
     }
 }
