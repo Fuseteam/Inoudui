@@ -17,9 +17,9 @@ Mezza_02 | Beta Tester
 Field | Info
 :---: | :---
 Library | JDA (Java Discord API) 3.0BETA2_143
-Guilds | 12
-Channels | 209
-Roles | 150
-Users | 571
-Support | https://bfnt.io/relash-support/
-Invite | https://bfnt.io/relash-invite/
+Guilds | 13
+Channels | 226
+Roles | 161
+Users | 657
+Support | https://bfnt.io/relash-support
+Invite | https://bfnt.io/relash-invite
