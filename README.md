@@ -9,7 +9,7 @@
 Name | Contributions
 --- | ---
 RYArrowsmith | Lead Developer / Project Manager
-Mezza_02 | Beta Tester
+ReeceyBoi801 | Contributor
 
 ## Information
 ---
