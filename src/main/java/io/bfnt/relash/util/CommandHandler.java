@@ -10,7 +10,7 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
  */
 public class CommandHandler extends ListenerAdapter {
 
-    private final String[] prefixes = {"r!", "<@287566190421868544>", "<@!287566190421868544>"};
+    private final String[] prefixes = {"<~", "r!", "<@287566190421868544>", "<@!287566190421868544>"};
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){

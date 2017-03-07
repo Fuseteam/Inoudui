@@ -51,7 +51,7 @@ public final class Main extends Config {
                 jda = new JDABuilder(AccountType.BOT)
                         .setToken(getToken())
                         .setAudioEnabled(false)
-                        .setGame(Game.of("broken :/"))
+                        .setGame(Game.of("<~ help"))
                         .addListener(new CommandHandler(), new Logger())
                         .buildBlocking();
 
