@@ -16,10 +16,7 @@ ReeceyBoi801 | Contributor
 
 Field | Info
 :---: | :---
-Library | JDA (Java Discord API) 3.0BETA2_143
+Library | JDA (Java Discord API) 3.0BETA2_144
 Guilds | 13
-Channels | 226
-Roles | 161
-Users | 657
 Support | https://bfnt.io/relash-support
 Invite | https://bfnt.io/relash-invite
