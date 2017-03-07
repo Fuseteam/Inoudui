@@ -10,22 +10,21 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
  */
 public class CommandHandler extends ListenerAdapter {
 
-    private final String[] prefixes = {"", ""};
+    private final String[] prefixes = {"r!"};
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
 
-        Boolean valid = true;
+        Boolean valid = false;
         String content = event.getMessage().getRawContent();
-        String trigger = "";
+        String triggerPrefix = "";
 
         for(String prefix : prefixes){
 
             if(content.startsWith(prefix)){
 
-                System.out.println(prefix);
-                trigger = prefix;
-                valid = false;
+                triggerPrefix = prefix;
+                valid = true;
                 break;
             }
         }
@@ -33,9 +32,11 @@ public class CommandHandler extends ListenerAdapter {
         Message message = event.getMessage();
         message.addReaction("⚙").queue();
 
-        switch(content.replaceFirst(trigger, "").trim()){
+        System.out.println(content);
+        switch(content.replaceFirst(triggerPrefix, "").trim()){
 
-            case "help": new Help().help(message); return;
+            case "meow": break;
+            case "help": new Help().help(message); break;
         }
     }
 }
