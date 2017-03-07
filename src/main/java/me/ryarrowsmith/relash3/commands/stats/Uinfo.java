@@ -28,7 +28,7 @@ public class Uinfo extends BotUtils
 		catch (PermissionException e)
 		{
 			
-			channel.sendMessage("Information about: " + user.getName() + "#" + user.getDiscriminator() + "\nGame: " + user.getJDA().getPresence().getGame()).queue();
+			channel.sendMessage("Information about: " + user.getName() + "#" + user.getDiscriminator() + "\nGame:   " + user.getJDA().getPresence().getGame()).queue();
 		}
 	}
 }

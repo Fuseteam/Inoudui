@@ -8,6 +8,7 @@ import me.ryarrowsmith.relash3.commands.random.animal.Dog;
 import me.ryarrowsmith.relash3.commands.stats.Ginfo;
 import me.ryarrowsmith.relash3.commands.stats.Info;
 import me.ryarrowsmith.relash3.commands.stats.Ping;
+import me.ryarrowsmith.relash3.commands.stats.Uinfo;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.exceptions.PermissionException;
@@ -96,7 +97,11 @@ public final class CommandHandler extends ListenerAdapter
 				
 				new Ping().ping(message);
 				break;
-			
+
+			case "uinfo":
+
+				new Uinfo().uinfo(message);
+
 			default:
 				
 				new Help().help(message);
