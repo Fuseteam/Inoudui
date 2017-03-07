@@ -1,6 +1,7 @@
 package io.bfnt.relash.util;
 
 import io.bfnt.relash.commands.Help;
+import io.bfnt.relash.commands.random.Cat;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -35,7 +36,9 @@ public class CommandHandler extends ListenerAdapter {
         System.out.println(content);
         switch(content.replaceFirst(triggerPrefix, "").trim()){
 
-            case "meow": break;
+            case "cat":
+            case "cate":
+            case "meow": new Cat().cat(message); break;
             case "help": new Help().help(message); break;
         }
     }
