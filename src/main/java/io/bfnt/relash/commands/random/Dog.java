@@ -8,20 +8,20 @@ import net.dv8tion.jda.core.exceptions.PermissionException;
 /**
  * Created by Ryan's PC on 07/03/2017.
  */
-public class Cat extends RelashCommand {
+public class Dog extends RelashCommand {
 
-    public void cat(Message trigger){
+    public void dog(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
-        final String image = getAnimal("cats");
+        final String image = getAnimal("shibes");
 
         try {
 
-            channel.sendMessage(makeEmbed("\uD83D\uDC31", "").setImage(image).build()).queue();
+            channel.sendMessage(makeEmbed("\uD83D\uDC36", "").setImage(image).build()).queue();
 
         } catch (PermissionException exception){
 
-            channel.sendMessage(getAnimal(image)).queue();
+            channel.sendMessage(image).queue();
         }
     }
 }
