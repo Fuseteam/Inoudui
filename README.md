@@ -1,22 +1,22 @@
-# relash3
-> Relash3 is a bot, which is a rewrite of a bot, which is a rewrite of a bot which is based on a selfbot made by me someone else. k
-
+# Relash
+```
+Relash is a bot for Discord.
+```
+Contributors:
 ---
 
-## Contributors:
----
-
-Name | Contributions
---- | ---
+=+= | Contributions
+:---: | :---:
 RYArrowsmith | Lead Developer / Project Manager
 ReeceyBoi801 | Contributor
+And you? |
 
-## Information
+Information
 ---
 
-Field | Info
-:---: | :---
+ =+= | Information
+:---: | :---:
 Library | JDA (Java Discord API) 3.0BETA2_144
-Guilds | 13
 Support | https://bfnt.io/relash-support
 Invite | https://bfnt.io/relash-invite
+Version | 3.0.2

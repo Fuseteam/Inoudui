@@ -1,5 +1,7 @@
-# Created by RYArrowsmith
+# Relash gitignore
 
 /target
 /.idea
 *.iml
+dependency-reduced-pom.xml
+test/

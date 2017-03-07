@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>me.ryarrowsmith</groupId>
   <artifactId>Relash</artifactId>
-  <version>3.0.0-BETA</version>
+  <version>3.0.2</version>
   <build>
     <plugins>
       <plugin>
