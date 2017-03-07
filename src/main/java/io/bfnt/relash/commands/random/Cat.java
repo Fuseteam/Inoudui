@@ -1,4 +1,4 @@
-package io.bfnt.relash.commands;
+package io.bfnt.relash.commands.random;
 
 import io.bfnt.relash.util.RelashCommand;
 import net.dv8tion.jda.core.entities.Message;
@@ -8,20 +8,20 @@ import net.dv8tion.jda.core.exceptions.PermissionException;
 /**
  * Created by Ryan's PC on 07/03/2017.
  */
-public class Help extends RelashCommand {
+public class Cat extends RelashCommand {
 
-    public void help(Message trigger){
+    public void cat(Message trigger){
 
         final TextChannel channel = trigger.getTextChannel();
-        final String commands = "<~ cat - Returns a random cat.";
+        final String image = getAnimal("cats");
 
         try {
 
-            channel.sendMessage(makeEmbed("❗❗ Relash Help ❗❗","", "Commands: " + commands).build()).queue();
+            channel.sendMessage(makeEmbed("\uD83D\uDC31", "").setImage(image).build()).queue();
 
         } catch (PermissionException exception){
 
-            channel.sendMessage("❗❗ Relash Help ❗❗\n" + commands).queue();
+            channel.sendMessage(getAnimal(image)).queue();
         }
     }
 }
