@@ -13,14 +13,15 @@ public class Cat extends RelashCommand {
     public void cat(Message trigger){
 
         final TextChannel channel = trigger.getTextChannel();
+        final String image = getAnimal("cats");
 
         try {
 
-            channel.sendMessage(makeEmbed("\uD83D\uDC31", "").setImage(getAnimal("cat")).build()).queue();
+            channel.sendMessage(makeEmbed("\uD83D\uDC31", "").setImage(image).build()).queue();
 
         } catch (PermissionException exception){
 
-            channel.sendMessage(getAnimal("cat")).queue();
+            channel.sendMessage(getAnimal(image)).queue();
         }
     }
 }
