@@ -1,14 +1,23 @@
 package io.bfnt.relash.commands;
 
+import io.bfnt.relash.util.RelashCommand;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.exceptions.PermissionException;
 
 /**
  * Created by Ryan's PC on 07/03/2017.
  */
-public class Help {
+public class Help extends RelashCommand {
 
     public void help(Message message){
 
-        message.getChannel().sendMessage("No commands yet").queue();
+        try {
+
+            message.getChannel().sendMessage(makeEmbed("Help","No commands yet.").build()).queue();
+
+        } catch (PermissionException exception){
+
+            message.getChannel().sendMessage("Help\nNo commands yet.").queue();
+        }
     }
 }
