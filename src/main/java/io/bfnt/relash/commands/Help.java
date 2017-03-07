@@ -13,7 +13,7 @@ public class Help extends RelashCommand {
     public void help(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
-        final String commands = "\uD83D\uDC31 <~ cat - Returns a random cat.\n\uD83D\uDC36 <~ dog - Returns a random dog.\n\uD83D\uDC26 <~ bird - Returns a random bird.";
+        final String commands = "❗ <~ help - Displays this message.\n\uD83D\uDC26 <~ bird - Returns a random bird.\n\uD83D\uDC31 <~ cat - Returns a random cat.\n\uD83D\uDC36 <~ dog - Returns a random dog.\n\uD83D\uDD18 <~ flip - Flips a coin.";
 
         try {
 

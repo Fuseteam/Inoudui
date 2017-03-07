@@ -12,7 +12,7 @@ public class Bird extends RelashCommand {
 
     public void bird(Message trigger){
 
-        final MessageChannel channel = trigger.getTextChannel();
+        final MessageChannel channel = trigger.getChannel();
         final String image = getAnimal("birds");
 
         try {
