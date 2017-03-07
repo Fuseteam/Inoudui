@@ -4,6 +4,7 @@ import io.bfnt.relash.commands.Help;
 import io.bfnt.relash.commands.random.Bird;
 import io.bfnt.relash.commands.random.Cat;
 import io.bfnt.relash.commands.random.Dog;
+import io.bfnt.relash.commands.random.Flip;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
@@ -40,6 +41,7 @@ public class CommandHandler extends ListenerAdapter {
 
             case "bird": new Bird().bird(message); break;
             case "cat": new Cat().cat(message); break;
+            case "flip": new Flip().flip(message); break;
             case "dog": new Dog().dog(message); break;
             case "help": new Help().help(message); break;
         }
