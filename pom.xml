@@ -33,7 +33,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>me.ryarrowsmith.relash3.Main</mainClass>
+                            <mainClass>io.bfnt.relash.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
