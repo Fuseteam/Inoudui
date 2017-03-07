@@ -2,7 +2,7 @@ package io.bfnt.relash.commands;
 
 import io.bfnt.relash.util.RelashCommand;
 import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.exceptions.PermissionException;
 
 /**
@@ -12,7 +12,7 @@ public class Help extends RelashCommand {
 
     public void help(Message trigger){
 
-        final TextChannel channel = trigger.getTextChannel();
+        final MessageChannel channel = trigger.getChannel();
         final String commands = "\uD83D\uDC31 <~ cat - Returns a random cat.\n\uD83D\uDC36 <~ dog - Returns a random dog.";
 
         try {
