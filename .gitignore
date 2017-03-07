@@ -5,3 +5,4 @@
 *.iml
 dependency-reduced-pom.xml
 test/
+secret/

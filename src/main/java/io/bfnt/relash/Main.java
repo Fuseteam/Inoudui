@@ -2,6 +2,7 @@ package io.bfnt.relash;
 
 import io.bfnt.relash.secret.Config;
 import io.bfnt.relash.util.CommandHandler;
+import io.bfnt.relash.util.Logger;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -48,10 +49,10 @@ public final class Main extends Config {
             try {
 
                 jda = new JDABuilder(AccountType.BOT)
-                        .setToken("-")
+                        .setToken(getToken())
                         .setAudioEnabled(false)
                         .setGame(Game.of("broken :/"))
-                        .addListener(new CommandHandler())
+                        .addListener(new CommandHandler(), new Logger())
                         .buildBlocking();
 
                 System.out.println("~> Successfully logged in!");

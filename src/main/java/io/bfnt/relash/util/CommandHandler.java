@@ -5,8 +5,6 @@ import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
-import java.util.List;
-
 /**
  * Created by Ryan's PC on 07/03/2017.
  */
@@ -17,7 +15,7 @@ public class CommandHandler extends ListenerAdapter {
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
 
-        Boolean ignore = true;
+        Boolean valid = true;
         String content = event.getMessage().getRawContent();
         String trigger = "";
 
@@ -25,18 +23,19 @@ public class CommandHandler extends ListenerAdapter {
 
             if(content.startsWith(prefix)){
 
+                System.out.println(prefix);
                 trigger = prefix;
-                ignore = false;
+                valid = false;
                 break;
             }
         }
-        if(ignore) return;
+        if(!valid) return;
         Message message = event.getMessage();
         message.addReaction("⚙").queue();
 
         switch(content.replaceFirst(trigger, "").trim()){
 
-            case "help": new Help().giveHelp(message); return;
+            case "help": new Help().help(message); return;
         }
     }
 }
