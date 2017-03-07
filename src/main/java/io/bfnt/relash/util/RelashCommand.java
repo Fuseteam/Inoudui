@@ -3,13 +3,16 @@ package io.bfnt.relash.util;
 import net.dv8tion.jda.core.EmbedBuilder;
 
 import java.awt.*;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Scanner;
 
 /**
  * Created by Ryan's PC on 07/03/2017.
  */
 public class RelashCommand {
 
-    public EmbedBuilder makeEmbed(String title, String description, String... fields){
+    protected EmbedBuilder makeEmbed(String title, String description, String... fields){
 
         EmbedBuilder embed = new EmbedBuilder();
         embed.setTitle(title, null);
@@ -20,5 +23,17 @@ public class RelashCommand {
         }
         embed.setColor( new Color(1,210,202));
         return embed;
+    }
+
+   protected String getAnimal(String animal){
+
+        try {
+
+            return new Scanner(new URL("http://shibe.online/api/" + animal + "/?count=1").openStream()).next().replaceAll("[\\[\\]\"]", "");
+
+        } catch (IOException exception){
+
+            return "https://cdn.discordapp.com/attachments/277836339687194625/288779713206419458/wump.png";
+        }
     }
 }
