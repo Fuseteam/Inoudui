@@ -13,11 +13,11 @@ public class Help extends RelashCommand {
 
         try {
 
-            message.getChannel().sendMessage(makeEmbed("Help","No commands yet.").build()).queue();
+            message.getChannel().sendMessage(makeEmbed("❗❗ Relash Help ❗❗","No commands yet.").build()).queue();
 
         } catch (PermissionException exception){
 
-            message.getChannel().sendMessage("Help\nNo commands yet.").queue();
+            message.getChannel().sendMessage("❗❗ Relash Help ❗❗\nNo commands yet.").queue();
         }
     }
 }

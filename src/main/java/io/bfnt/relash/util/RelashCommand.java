@@ -18,7 +18,7 @@ public class RelashCommand {
 
             embed.addField(field.split(" ")[0], field.replaceFirst(field.split(" ")[0], ""), false);
         }
-        embed.setColor( new Color(16,195,181));
+        embed.setColor( new Color(1,210,202));
         return embed;
     }
 }
