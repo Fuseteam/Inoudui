@@ -35,6 +35,7 @@ public final class Main extends Config {
                     case "boot": login(); break;
                     case "exit": System.exit(0); break;
                     case "shutdown": shutdown(); break;
+                    case "reboot": reboot(); break;
                 }
             }
         }
@@ -74,6 +75,7 @@ public final class Main extends Config {
 
     private static void reboot(){
 
-
+        shutdown();
+        login();
     }
 }
