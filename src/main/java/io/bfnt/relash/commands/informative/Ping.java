@@ -15,8 +15,8 @@ public class Ping extends RelashCommand {
     public void ping(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
-        final String p1 = "⏱ Pinging...";
-        final String p2 = "⏱ Ping: %time%ms";
+        final String p1 = "🕚 Pinging...";
+        final String p2 = "🕛 Ping: %time%ms";
 
         try {
 

@@ -17,7 +17,7 @@ public class Dog extends RelashCommand {
 
         try {
 
-            channel.sendMessage(makeEmbed("\uD83D\uDC36", "").setImage(image).build()).queue();
+            channel.sendMessage(makeEmbed("🐶", "").setImage(image).build()).queue();
 
         } catch (PermissionException exception){
 

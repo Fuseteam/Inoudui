@@ -15,7 +15,7 @@ public class Dice extends RelashCommand {
     public void dice(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
-        final String result = "\uD83E\uDD23 Result: " + (new SecureRandom().nextInt(6) + 1);
+        final String result = "🤣 Result: " + (new SecureRandom().nextInt(6) + 1);
 
         try {
 

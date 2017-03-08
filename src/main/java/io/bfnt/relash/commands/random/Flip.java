@@ -19,11 +19,11 @@ public class Flip extends RelashCommand {
 
         if(new SecureRandom().nextInt(2) + 1 == 1){
 
-            result = "\uD83D\uDD18 Result: Heads.";
+            result = "🔘 Result: Heads.";
 
         } else {
 
-            result = "\uD83D\uDD18 Result: Tails.";
+            result = "🔘 Result: Tails.";
         }
 
         try {
