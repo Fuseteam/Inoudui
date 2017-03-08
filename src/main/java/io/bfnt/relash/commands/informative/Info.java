@@ -15,7 +15,7 @@ public class Info extends RelashCommand {
 
         final MessageChannel channel = trigger.getChannel();
         final JDA jda = trigger.getJDA();
-        final String info = "👥 Guilds: " + jda.getGuilds().size() + "\n🖊Text Channels: " + jda.getTextChannels().size() + "\n🎵Voice Channels: " + jda.getVoiceChannels().size() + "\n📓Total Channels: " + (jda.getTextChannels().size() + jda.getVoiceChannels().size() + "\n❗Invite: https://bfnt.io/relash-invite\n❔Support: https://bfnt.io/relash-support \n💵Donate: https://bfnt.io/relash-donate");
+        final String info = "👤Owner: RYArrowsmith#8070\n📚Library: JDA (Java Discord API)\n🔧API Version: 3.0.BETA2_145\n-=+=-\n👥Guilds: " + jda.getGuilds().size() + "\n🎧Voice Channels: " + jda.getVoiceChannels().size() + "\n🖊Text Channels: " + jda.getTextChannels().size() + "\n📓Total Channels: " + (jda.getTextChannels().size() + jda.getVoiceChannels().size() + "\n-=+=-\n❗Invite: https://bfnt.io/relash-invite\n❔Support: https://bfnt.io/relash-support \n💵Donate: https://bfnt.io/relash-donate");
 
         try {
 
