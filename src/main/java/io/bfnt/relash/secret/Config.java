@@ -7,6 +7,6 @@ public class Config {
 
     protected static String getToken() {
 
-        return "Mjg5MDc2MzgyMDcwMzQxNjM5.C6HG5A.eRwb3O_eF83mQXzCIQb1CO6Ia-0";
+        return "-";
     }
 }
