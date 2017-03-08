@@ -1,6 +1,7 @@
 package io.bfnt.relash.util;
 
 import io.bfnt.relash.commands.informative.Help;
+import io.bfnt.relash.commands.informative.Info;
 import io.bfnt.relash.commands.informative.Ping;
 import io.bfnt.relash.commands.random.*;
 import net.dv8tion.jda.core.entities.Message;
@@ -43,6 +44,7 @@ public class CommandHandler extends ListenerAdapter {
             case "dog": new Dog().dog(message); break;
             case "flip": new Flip().flip(message); break;
             case "help": new Help().help(message); break;
+            case "info": new Info().info(message); break;
             case "ping": new Ping().ping(message); break;
         }
     }
