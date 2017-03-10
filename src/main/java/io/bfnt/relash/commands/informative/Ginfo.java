@@ -1,10 +1,7 @@
 package io.bfnt.relash.commands.informative;
 
 import io.bfnt.relash.util.RelashCommand;
-import net.dv8tion.jda.core.entities.ChannelType;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.MessageChannel;
-import net.dv8tion.jda.core.entities.TextChannel;
+import net.dv8tion.jda.core.entities.*;
 import net.dv8tion.jda.core.exceptions.PermissionException;
 
 /**
@@ -15,9 +12,7 @@ public class Ginfo extends RelashCommand {
     public void ginfo(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
-        final String error = "\\o/ this is not a guild \\o/";
-        final String info = "";
-
+        final String error = "⚠ \\o/ this is not a guild \\o/ ⚠";
         if(!channel.getType().equals(ChannelType.TEXT)){
 
             try {
@@ -32,14 +27,17 @@ public class Ginfo extends RelashCommand {
             return;
         }
 
-        final TextChannel guildChannel = trigger.getTextChannel();
+        final TextChannel guildc = trigger.getTextChannel();
+        final Guild guild = guildc.getGuild();
+        final String title = "📝" + guild.getName().trim() + "📝";
+        final String info = "";
         try {
 
-            channel.sendMessage(makeEmbed(guildChannel.getName(), info).build()).queue();
+            channel.sendMessage(makeEmbed(title, "").addField("", info, true).build()).queue();
 
         } catch (PermissionException e){
 
-            channel.sendMessage(info).queue();
+            channel.sendMessage(title + "\n" + info).queue();
         }
     }
 }

@@ -1,5 +1,6 @@
 package io.bfnt.relash.util;
 
+import io.bfnt.relash.commands.informative.Ginfo;
 import io.bfnt.relash.commands.informative.Help;
 import io.bfnt.relash.commands.informative.Info;
 import io.bfnt.relash.commands.informative.Ping;
@@ -44,6 +45,7 @@ public class CommandHandler extends ListenerAdapter {
             case "dog": new Dog().dog(message); break;
             case "flip": new Flip().flip(message); break;
             case "help": new Help().help(message); break;
+            case "ginfo": new Ginfo().ginfo(message); break;
             case "info": new Info().info(message); break;
             case "ping": new Ping().ping(message); break;
         }
