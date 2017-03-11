@@ -4,6 +4,8 @@ import io.bfnt.relash.util.RelashCommand;
 import net.dv8tion.jda.core.entities.*;
 import net.dv8tion.jda.core.exceptions.PermissionException;
 
+import java.time.temporal.ChronoUnit;
+
 /**
  * Created by Ryan's PC on 09/03/2017.
  */
@@ -12,7 +14,7 @@ public class Ginfo extends RelashCommand {
     public void ginfo(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
-        final String error = "⚠ \\o/ this is not a guild \\o/ ⚠";
+        final String error = "⚠ This is not a guild. ⚠";
         if(!channel.getType().equals(ChannelType.TEXT)){
 
             try {
@@ -30,10 +32,16 @@ public class Ginfo extends RelashCommand {
         final TextChannel guildc = trigger.getTextChannel();
         final Guild guild = guildc.getGuild();
         final String title = "📝" + guild.getName().trim() + "📝";
-        final String info = "";
+        String roles = "";
+        for(Role role : guild.getRoles()){
+
+            roles += role.getName() + ", ";
+        }
+        roles = roles.replace(", @everyone", ".");
+        final String info = String.format("🙇Owner: %s\n🎧Voice Channels: %d\n🖊Text Channels: %d\n📓Total Channels: %d\n👥Members: %d\n👤Roles: (%d)\n%s\n🕛Created: %s day(s) ago.", guild.getOwner().getUser().getName() + "#" + guild.getOwner().getUser().getDiscriminator(), guild.getVoiceChannels().size(), guild.getTextChannels().size(), guild.getVoiceChannels().size() + guild.getTextChannels().size(), guild.getMembers().size(), guild.getRoles().size(), roles, guild.getCreationTime().until(trigger.getCreationTime(), ChronoUnit.DAYS));
         try {
 
-            channel.sendMessage(makeEmbed(title, "").addField("", info, true).build()).queue();
+            channel.sendMessage(makeEmbed(title, "").addField("", info, true).setThumbnail(guild.getIconUrl()).build()).queue();
 
         } catch (PermissionException e){
 
