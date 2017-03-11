@@ -49,7 +49,7 @@ public final class Main extends Config {
 
             try {
 
-                jda = new JDABuilder(AccountType.CLIENT)
+                jda = new JDABuilder(AccountType.BOT)
                         .setToken(getToken())
                         .setAudioEnabled(false)
                         .setGame(Game.of("<~ help"))
