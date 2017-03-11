@@ -22,7 +22,7 @@ public class Info extends RelashCommand {
 
             users += guild.getMembers().size();
         }
-        final String info = String.format("🙇 Owner: RYArrowsmith#8070\n📚 Library: JDA (Java Discord API)\n🔧 API Version: 3.0.BETA2_147\n🤖 Bot Version: 3.0.3\n-=+=-\n👥 Guilds: %d\n🎧 Voice Channels: %d\n🖊 Text Channels: %d\n📓 Total Channels: %d\n👤 Users: %d\n-=+=-\n❗ InviteMe: https://bfnt.io/relash-invite\n❔ Support: https://bfnt.io/relash-support\n💵 Donate: https://bfnt.io/relash-donate\n🖥 Website: https://bfnt.io/relash-website", jda.getGuilds().size(), jda.getVoiceChannels().size(), jda.getTextChannels().size(), jda.getTextChannels().size() + jda.getVoiceChannels().size(), users);
+        final String info = String.format("🙇 Owner: RYArrowsmith#8070\n📚 Library: JDA (Java Discord API)\n🔧 API Version: 3.0.BETA2_148\n🤖 Bot Version: 3.0.5\n-=+=-\n👥 Guilds: %d\n🎧 Voice Channels: %d\n🖊 Text Channels: %d\n📓 Total Channels: %d\n👤 Users: %d\n-=+=-\n❗ InviteMe: https://bfnt.io/relash-invite\n❔ Support: https://bfnt.io/relash-support\n💵 Donate: https://bfnt.io/relash-donate\n🖥 Website: https://bfnt.io/relash-website", jda.getGuilds().size(), jda.getVoiceChannels().size(), jda.getTextChannels().size(), jda.getTextChannels().size() + jda.getVoiceChannels().size(), users);
 
         try {
 
