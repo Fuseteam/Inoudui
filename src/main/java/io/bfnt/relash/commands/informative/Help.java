@@ -15,7 +15,6 @@ public class Help extends RelashCommand {
 
         final MessageChannel channel = trigger.getChannel();
         final String commands = "`Informative:`\n❗ <~ help - Sends you help.\n📈 <~ info - Gives you info about Relash.\n📝 <~ ginfo - Gives you info about the current guild.\n⏱ <~ ping - Pings Relash's connection.\n🖥 <~ website - Gives a link to my website.\n`Random:` \n🐦 <~ bird - Returns a random bird.\n🐱 <~ cat - Returns a random cat.\n🤣 <~ dice - Rolls a 6-sided die.\n🐶 <~ dog - Returns a random dog.\n🔘 <~ flip - Flips a coin.";
-        final String checkPM = "📫 Check your private messages for help! 📫";
 
         if(!channel.getType().equals(ChannelType.PRIVATE)){
 

@@ -12,6 +12,8 @@ import java.util.Scanner;
  */
 public class RelashCommand {
 
+    protected final String checkPM = "📫 Check your private messages! 📫";
+
     protected EmbedBuilder makeEmbed(String title, String description, String... fields){
 
         EmbedBuilder embed = new EmbedBuilder();

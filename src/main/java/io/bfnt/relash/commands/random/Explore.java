@@ -2,10 +2,7 @@ package io.bfnt.relash.commands.random;
 
 import io.bfnt.relash.util.RelashCommand;
 import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Invite;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.MessageChannel;
+import net.dv8tion.jda.core.entities.*;
 import net.dv8tion.jda.core.exceptions.PermissionException;
 
 import java.security.SecureRandom;
@@ -17,16 +14,27 @@ public class Explore extends RelashCommand {
 
     public void explore(Message trigger){
 
-        final MessageChannel channel = trigger.getChannel();
+        final MessageChannel pchannel = trigger.getChannel();
         final String searching = "🔎 Searching...";
         final String found = "🔍 Found: ";
-        final String link = "%s | https://discord.gg/%s";
+        final String link = "%s\nhttps://discord.gg/%s";
         final JDA jda = trigger.getJDA();
-        makeInvite(jda.getGuilds().get(new SecureRandom().nextInt(jda.getGuilds().size())));
+
+        if(!pchannel.getType().equals(ChannelType.PRIVATE)){
+
+            try {
+
+                pchannel.sendMessage(makeEmbed(checkPM, "").build()).queue();
+
+            } catch (PermissionException e){
+
+                pchannel.sendMessage(checkPM).queue();
+            }
+        }
 
         try {
 
-            channel.sendMessage(makeEmbed(searching, "").build()).queue(search -> {
+            trigger.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage(makeEmbed(searching, "").build()).queue(search -> {
 
                 Invite invite = null;
 
@@ -36,11 +44,11 @@ public class Explore extends RelashCommand {
                 }
 
                 search.editMessage(makeEmbed(found, String.format(link, invite.getGuild().getName(), invite.getCode())).build()).queue();
-            });
+            }));
 
         } catch (PermissionException e){
 
-            channel.sendMessage(searching).queue(search -> {
+            trigger.getAuthor().openPrivateChannel().queue(channel -> channel.sendMessage(searching).queue(search -> {
 
                 Invite invite = null;
 
@@ -50,7 +58,7 @@ public class Explore extends RelashCommand {
                 }
 
                 search.editMessage(found + String.format(link, invite.getGuild(), invite.getCode())).queue();
-            });
+            }));
         }
     }
 
