@@ -16,11 +16,11 @@ public class Ping extends RelashCommand {
 
         final MessageChannel channel = trigger.getChannel();
         final String p1 = "🕚 Pinging...";
-        final String p2 = "🕛 Ping: %time%ms";
+        final String p2 = "🕛 Ping: %dms";
 
         try {
 
-            channel.sendMessage(makeEmbed(" ", p1).build()).queue(pong -> pong.editMessage(makeEmbed(" ", p2.replace("%time%", trigger.getCreationTime().until(pong.getCreationTime(), ChronoUnit.MILLIS) + "")).build()).queue());
+            channel.sendMessage(makeEmbed(" ", p1).build()).queue(pong -> pong.editMessage(makeEmbed(" ", String.format(p2, trigger.getCreationTime().until(pong.getCreationTime(), ChronoUnit.MILLIS))).build()).queue());
 
         } catch (PermissionException exception){
 

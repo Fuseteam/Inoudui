@@ -12,17 +12,16 @@ public class Website extends RelashCommand {
 
     public void website(Message trigger){
 
-        final String title = "🖥 My website is: ";
-        final String website =  "<https://ryarrowsmith.github.io/>";
+        final String message = "🖥 My website is: <https://ryarrowsmith.github.io/>";
         final MessageChannel channel = trigger.getChannel();
 
         try {
 
-            channel.sendMessage(makeEmbed(title, website).build()).queue();
+            channel.sendMessage(makeEmbed(" ", message).build()).queue();
 
         } catch (PermissionException e){
 
-            channel.sendMessage(title + website).queue();
+            channel.sendMessage(message).queue();
         }
     }
 }

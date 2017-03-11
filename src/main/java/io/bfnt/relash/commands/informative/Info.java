@@ -26,7 +26,7 @@ public class Info extends RelashCommand {
 
         try {
 
-            channel.sendMessage(makeEmbed(rinfo, "").addField("", info, true).setThumbnail(jda.getSelfUser().getEffectiveAvatarUrl()).build()).queue();
+            channel.sendMessage(makeEmbed(" ", rinfo).addField("", info, true).setThumbnail(jda.getSelfUser().getEffectiveAvatarUrl()).build()).queue();
 
         } catch (PermissionException exception){
 

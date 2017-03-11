@@ -13,16 +13,15 @@ public class InviteMe extends RelashCommand {
     public void invite(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
-        final String title = "❗ My invite link is: ";
-        final String link = "https://bfnt.io/relash-invite";
+        final String message = "❗ My invite link is: https://bfnt.io/relash-invite";
 
         try {
 
-            channel.sendMessage(makeEmbed(title, link).build()).queue();
+            channel.sendMessage(makeEmbed(" ", message).build()).queue();
 
         } catch (PermissionException e){
 
-            channel.sendMessage(title + link).queue();
+            channel.sendMessage(message).queue();
         }
     }
 }
