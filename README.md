@@ -18,6 +18,6 @@ Information
 :---: | :---:
 Library | JDA (Java Discord API) 3.0BETA2_145
 Support | https://bfnt.io/relash-support
-Invite | https://bfnt.io/relash-invite
+Invite | https://bfnt.io/relash-inviteMe
 Donate | https://bfnt.io/relash-donate
 Version | 3.0.3

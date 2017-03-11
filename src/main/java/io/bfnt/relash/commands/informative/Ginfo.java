@@ -31,14 +31,14 @@ public class Ginfo extends RelashCommand {
 
         final TextChannel guildc = trigger.getTextChannel();
         final Guild guild = guildc.getGuild();
-        final String title = "📝" + guild.getName().trim() + "📝";
+        final String title = "📝 " + guild.getName().trim() + " 📝";
         String roles = "";
         for(Role role : guild.getRoles()){
 
             roles += role.getName() + ", ";
         }
-        roles = roles.replace(", @everyone", ".");
-        final String info = String.format("🙇Owner: %s\n🎧Voice Channels: %d\n🖊Text Channels: %d\n📓Total Channels: %d\n👥Members: %d\n👤Roles: (%d)\n%s\n🕛Created: %s day(s) ago.", guild.getOwner().getUser().getName() + "#" + guild.getOwner().getUser().getDiscriminator(), guild.getVoiceChannels().size(), guild.getTextChannels().size(), guild.getVoiceChannels().size() + guild.getTextChannels().size(), guild.getMembers().size(), guild.getRoles().size(), roles, guild.getCreationTime().until(trigger.getCreationTime(), ChronoUnit.DAYS));
+        roles = roles.replace(", @everyone,", ".");
+        final String info = String.format("🙇 Owner: %s\n🎧 Voice Channels: %d\n🖊 Text Channels: %d\n📓 Total Channels: %d\n👥 Members: %d\n👤Roles: (%d)\n%s\n🕛 Created: %s day(s) ago.", guild.getOwner().getUser().getName() + "#" + guild.getOwner().getUser().getDiscriminator(), guild.getVoiceChannels().size(), guild.getTextChannels().size(), guild.getVoiceChannels().size() + guild.getTextChannels().size(), guild.getMembers().size(), guild.getRoles().size(), roles, guild.getCreationTime().until(trigger.getCreationTime(), ChronoUnit.DAYS));
         try {
 
             channel.sendMessage(makeEmbed(title, "").addField("", info, true).setThumbnail(guild.getIconUrl()).build()).queue();

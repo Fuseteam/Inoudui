@@ -1,9 +1,6 @@
 package io.bfnt.relash.util;
 
-import io.bfnt.relash.commands.informative.Ginfo;
-import io.bfnt.relash.commands.informative.Help;
-import io.bfnt.relash.commands.informative.Info;
-import io.bfnt.relash.commands.informative.Ping;
+import io.bfnt.relash.commands.informative.*;
 import io.bfnt.relash.commands.random.*;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
@@ -48,6 +45,9 @@ public class CommandHandler extends ListenerAdapter {
             case "ginfo": new Ginfo().ginfo(message); break;
             case "info": new Info().info(message); break;
             case "ping": new Ping().ping(message); break;
+            case "website": new Website().website(message); break;
+            case "invite": new InviteMe().invite(message); break;
+            case "explore": new Explore().explore(message); break;
         }
     }
 }
