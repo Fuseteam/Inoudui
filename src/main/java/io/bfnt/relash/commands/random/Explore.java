@@ -1,6 +1,7 @@
 package io.bfnt.relash.commands.random;
 
 import io.bfnt.relash.util.RelashCommand;
+import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Invite;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
@@ -17,21 +18,20 @@ public class Explore extends RelashCommand {
         final String searching = "🔎 Searching...";
         final String found = "🔍 Found: ";
         final String link = "%s | https://discord.gg/%s";
-        final Invite invite;
+        final Invite invite = makeInvite(trigger.getGuild());
 
         try {
 
-            channel.sendMessage(makeEmbed(searching, "").build()).queue(search -> {
-
-                search.editMessage(makeEmbed(found, String.format(link, invite.getGuild(), invite.getCode())).build()).queue();
-            });
+            channel.sendMessage(makeEmbed(searching, "").build()).queue(search -> search.editMessage(makeEmbed(found, String.format(link, invite.getGuild().getName(), invite.getCode())).build()).queue());
 
         } catch (PermissionException e){
 
-            channel.sendMessage(searching).queue(search -> {
-
-                search.editMessage(found + String.format(link, invite.getGuild(), invite.getCode())).queue();
-            });
+            channel.sendMessage(searching).queue(search -> search.editMessage(found + String.format(link, invite.getGuild(), invite.getCode())).queue());
         }
+    }
+
+    private Invite makeInvite(Guild guild){
+
+        return guild.getPublicChannel().createInvite().complete();
     }
 }
