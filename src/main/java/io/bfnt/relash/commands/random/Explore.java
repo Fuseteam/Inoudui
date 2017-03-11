@@ -24,7 +24,7 @@ public class Explore extends RelashCommand {
 
             try {
 
-                pchannel.sendMessage(makeEmbed(checkPM, "").build()).queue();
+                pchannel.sendMessage(makeEmbed(" ", checkPM).build()).queue();
 
             } catch (PermissionException e){
 
