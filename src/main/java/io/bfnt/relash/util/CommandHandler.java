@@ -48,6 +48,7 @@ public class CommandHandler extends ListenerAdapter {
             case "website": new Website().website(message); break;
             case "invite": new InviteMe().invite(message); break;
             case "explore": new Explore().explore(message); break;
+            case "google": new Google().google(message); break;
         }
     }
 }
