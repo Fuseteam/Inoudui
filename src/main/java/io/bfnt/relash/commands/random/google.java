@@ -10,9 +10,9 @@ import java.security.SecureRandom;
 /**
  * Created by Ryan's PC on 07/03/2017.
  */
-public class Flip extends RelashCommand {
+public class Google extends RelashCommand {
 
-    public void flip(Message trigger){
+    public void google(Message trigger){
 
         final MessageChannel channel = trigger.getChannel();
         String result;
