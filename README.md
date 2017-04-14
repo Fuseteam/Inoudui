@@ -7,9 +7,7 @@ Contributors:
 
 -=+=- | Contributions
 :---: | :---:
-RYArrowsmith | Lead Developer / Project Manager
-ReeceyBoi801 | Contributor
-And you? |
+you? |
 
 Information
 ---
